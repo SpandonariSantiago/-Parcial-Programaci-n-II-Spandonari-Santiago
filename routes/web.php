@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Middleware\Autenticacion;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,16 @@ Route::get('/', function () {
     return view('Inicio');
 });
 
+Route::post('/', [UsersController::class,'Logout']);
+
+Route::get('/Login', function () {
+    return view('Login');
+})-> middleware(Autenticacion::class);
+
+Route::post('/Login', [UsersController::class,'Login']);
+
 Route::get('/Registro', function () {
     return view('Registro');
-});
+})-> middleware(Autenticacion::class);
 
 Route::post('/Registro', [UsersController::class,'AltaUsuario']);

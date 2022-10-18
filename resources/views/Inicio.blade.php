@@ -12,13 +12,13 @@
     <h3></h3><hr>
     
 
-    @if(session('Login'))
+    @if(Auth::user())
         <h3>Aqui puede agregar, eliminar o simplemente visualizar los productos que ofrecemos</h3><hr>
 
         <form action="/" method="post">@csrf
 
             <label>Bienvenido: </label>
-                <input type="text" name="NombreUsuario" id="NombreUsuario" value="{{ session('Autor') }}" readonly><br /><br />
+                <input type="text" name="NombreUsuario" id="NombreUsuario" value="{{ Auth::user()->name }}" readonly><br /><br />
 
             <label>Para cerrar sesion presione aqui: </label>
                 <input type="submit" value="Cerrar Sesión">
@@ -26,7 +26,7 @@
         </form>
 
         <hr><label>Productos: </label>
-            <a href='/'><input type="button" value="Agregar"></a><hr>
+            <a href='/'><input type="button" value="Agregar"></a>
             <a href='/'><input type="button" value="Eliminar"></a><hr>
 
         @isset($Productos)

@@ -33,15 +33,8 @@
 
     
     @isset($Error)
-
-        @if($Error)
-            <br /><hr>
-            <div style="color: red;">Error al crear el usuario</div>
-        @else
-            <br /><hr>
-            <div style="color: green;">Usuario creado correctamente</div>
-        @endif
-
+        <br /><hr>
+        <div style="color: red;">Error al crear el usuario</div>
     @endisset
 
 </body>
