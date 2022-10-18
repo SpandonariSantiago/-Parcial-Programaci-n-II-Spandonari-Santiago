@@ -25,17 +25,22 @@
         </form>
 
         <hr><label>Productos: </label>
-            <a href='/AltaProducto'><input type="button" value="Agregar"></a>
-            <a href='/'><input type="button" value="Eliminar"></a><hr>
+            <a href='/AltaProducto'><input type="button" value="Agregar"></a><hr>
 
         @isset($Productos)
             @foreach($Productos as $Producto)
 
-                <b>ID: </b> {{ $Producto -> id }} <br />
+            <form action="/BajaProducto" method="get">@csrf
+
+                <b>ID: </b> <input type="number" name="id" id="id" value="{{ $Producto -> id }}" readonly> <br />
                 <b>&nbsp;&nbsp;Nombre: </b> {{ $Producto -> Nombre }}<br />
                 <b>&nbsp;&nbsp;Marca: </b>{{ $Producto -> Marca }}<br />
                 <b>&nbsp;&nbsp;Descripcion: </b> {{ $Producto -> Descripcion }}<br />
-                <b>&nbsp;&nbsp;Stock: </b> {{ $Producto -> Stock }}<hr>
+                <b>&nbsp;&nbsp;Stock: </b> {{ $Producto -> Stock }}
+
+                <input type="submit" value="Eliminar"><hr>
+
+            </form>
 
             @endforeach
         @endisset

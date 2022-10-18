@@ -16,7 +16,7 @@ use App\Http\Middleware\Autenticacion;
 |
 */
 
-Route::get("/",[ProductoController::class, "ListarProducto"]);
+Route::get("/",[ProductoController::class, "ListarProductos"]);
 
 Route::post('/', [UsersController::class,'Logout']);
 
@@ -37,3 +37,7 @@ Route::get('/AltaProducto', function () {
 });
 
 Route::post('/AltaProducto', [ProductoController::class,'AltaProducto']);
+
+Route::get("/BajaProducto",[ProductoController::class, "ListarProducto"]);
+
+Route::post('/BajaProducto', [ProductoController::class,'BajaProducto']);
