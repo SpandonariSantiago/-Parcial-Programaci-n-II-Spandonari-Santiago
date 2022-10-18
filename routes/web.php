@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Middleware\Autenticacion;
 
 /*
@@ -32,3 +33,9 @@ Route::get('/Registro', function () {
 })-> middleware(Autenticacion::class);
 
 Route::post('/Registro', [UsersController::class,'AltaUsuario']);
+
+Route::get('/AltaProducto', function () {
+    return view('AltaProducto');
+});
+
+Route::post('/AltaProducto', [ProductoController::class,'AltaProducto']);

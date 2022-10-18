@@ -8,8 +8,7 @@
 </head>
 <body>
     <h1>SUPERMERCADO "GLI UOVA"</h1><hr>
-    <h2>Usted se encuentra en la pagina de inicio</h2>
-    <h3></h3><hr>
+    <h2>Usted se encuentra en la pagina de inicio</hS<hr>
     
 
     @if(Auth::user())
@@ -26,7 +25,7 @@
         </form>
 
         <hr><label>Productos: </label>
-            <a href='/'><input type="button" value="Agregar"></a>
+            <a href='/AltaProducto'><input type="button" value="Agregar"></a>
             <a href='/'><input type="button" value="Eliminar"></a><hr>
 
         @isset($Productos)
