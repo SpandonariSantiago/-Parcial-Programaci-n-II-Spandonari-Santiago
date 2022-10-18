@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERMERCADO</title>
+    <title>GLI UOVA</title>
 </head>
 <body>
-    <h1>SUPERMERCADO</h1><hr>
-    <h2>Usted se encuentra en la pagina de inicio</h2><hr>
+    <h1>SUPERMERCADO "GLI UOVA"</h1><hr>
+    <h2>Usted se encuentra en la pagina de inicio</h2>
+    <h3></h3><hr>
     
 
     @if(session('Login'))
+        <h3>Aqui puede agregar, eliminar o simplemente visualizar los productos que ofrecemos</h3><hr>
 
         <form action="/" method="post">@csrf
 
@@ -37,9 +39,11 @@
                 <b>&nbsp;&nbsp;Stock: </b> {{ $Producto -> Stock }}<hr>
 
             @endforeach
-        @endif
+        @endisset
 
     @else    
+
+        <h3>Aqui puede iniciar sesion. En caso de no tener cuenta puede crear una</h3><hr>
 
         <label>Para iniciar sesion presione aqui: </label>
             <a href='/Login'><input type="button" value="Iniciar sesion"></a><hr>
