@@ -25,4 +25,10 @@ class ProductoController extends Controller
 
         }
     }
+
+    public function ListarProducto(Producto $producto)
+    {
+        $Productos = Producto::all();
+        return view('Inicio',["Productos" => $Productos]);
+    }
 }

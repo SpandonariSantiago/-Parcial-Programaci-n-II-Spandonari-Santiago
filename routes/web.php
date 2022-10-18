@@ -16,9 +16,7 @@ use App\Http\Middleware\Autenticacion;
 |
 */
 
-Route::get('/', function () {
-    return view('Inicio');
-});
+Route::get("/",[ProductoController::class, "ListarProducto"]);
 
 Route::post('/', [UsersController::class,'Logout']);
 

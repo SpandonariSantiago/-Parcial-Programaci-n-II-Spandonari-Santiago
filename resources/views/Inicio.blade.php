@@ -31,7 +31,7 @@
         @isset($Productos)
             @foreach($Productos as $Producto)
 
-                <b>ID: </b> {{ $Producto -> Id }} <br />
+                <b>ID: </b> {{ $Producto -> id }} <br />
                 <b>&nbsp;&nbsp;Nombre: </b> {{ $Producto -> Nombre }}<br />
                 <b>&nbsp;&nbsp;Marca: </b>{{ $Producto -> Marca }}<br />
                 <b>&nbsp;&nbsp;Descripcion: </b> {{ $Producto -> Descripcion }}<br />
